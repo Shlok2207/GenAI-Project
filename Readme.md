@@ -1,6 +1,8 @@
 # Wayfare
 
-Wayfare is a front-end travel and tourism landing website concept for browsing domestic and international trips. It presents curated destinations, package deals, hotel suggestions, activities, and enquiry/booking flows in a polished, responsive single-page experience.
+Visit the live site here: [Wayfare Live Website](https://shlok2207.github.io/GenAI-Project/)
+
+Wayfare is a front-end travel and tourism landing website concept for browsing domestic and international trips. It presents curated destinations, package deals, hotel suggestions, activities, and enquiry options in a polished travel brand style.
 
 The project is built using plain HTML, CSS, and JavaScript, with Bootstrap for layout and UI components, and runs as a front-end website with no backend or database.
 
@@ -91,4 +93,4 @@ The project includes several front-end accessibility considerations:
 
 ## Summary
 
-Wayfare is a front-end travel website concept focused on showcasing destination browsing, package selection, and polished user interaction in a tourism brand style. It demonstrates how a travel brand can present trip options, assist planning, and deliver a responsive marketing experience without requiring a backend.
+Wayfare is a front-end travel website concept focused on showcasing destination browsing, package selection, and polished user interaction in a tourism brand style. It demonstrates how a travel brand can present curated journeys with a clean, responsive, and accessible browsing experience.
