@@ -53,7 +53,6 @@ GenAI-Project/
 ├── style.css
 ├── script.js
 ├── Readme.md
-└── assets/   (if added later)
 ```
 
 ### File responsibilities
