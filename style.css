@@ -1,0 +1,182 @@
+/* =========================================================
+   WAYFARE v2 – style.css  (soft, light palette)
+   1 Tokens · 2 Base · 3 Navbar · 4 Hero · 5 Sections & buttons
+   6 Cards & media · 7 Video · 8 Forms · 9 Footer · 10 Motion
+   ========================================================= */
+
+/* 1. TOKENS – one place to change the whole look */
+:root {
+  --bg:        #FBF8F3;   /* soft warm white            */
+  --sand:      #F3ECE0;   /* pale sand (alt sections)   */
+  --pearl:     #F7F5F1;   /* light pearl (surfaces)     */
+  --line:      #E4DACA;   /* hairlines and borders      */
+  --ink:       #2F3B36;   /* headings                   */
+  --text:      #3F4440;   /* body text                  */
+  --muted:     #666B66;   /* secondary text (4.7:1+)    */
+  --sage:      #46705F;   /* primary accent (white text 5.8:1) */
+  --sage-dk:   #385C4D;
+  --sage-soft: #E3ECE6;
+  --gold:      #B08A4A;   /* decorative accent          */
+  --gold-text: #86672B;   /* readable gold (stars)      */
+  --radius:    14px;
+  --radius-sm: 10px;
+  --shadow:    0 2px 12px rgba(63, 68, 64, .07);
+  --shadow-lg: 0 14px 30px rgba(63, 68, 64, .13);
+  --hero-bg:   #DDE9E1;   /* solid pastel sage for the hero */
+  --section-y: 5.5rem;
+}
+
+/* 2. BASE */
+html { scroll-padding-top: 80px; }
+body {
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem; line-height: 1.65;
+  color: var(--text); background: var(--bg);
+  overflow-x: hidden;                      /* guards against stray horizontal scroll on phones */
+}
+h1, h2, h3, h4, .navbar-brand, .footer-brand {
+  font-family: "Fraunces", Georgia, serif; font-weight: 600;
+  color: var(--ink); letter-spacing: -.01em; line-height: 1.2;
+}
+h1 { font-size: clamp(2.3rem, 5.5vw, 3.7rem); line-height: 1.1; }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.12rem; }
+a { color: var(--sage-dk); }
+a:hover { color: var(--ink); }
+img, video { max-width: 100%; }
+
+:focus-visible { outline: 3px solid var(--sage-dk); outline-offset: 2px; }
+
+.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 2000; background: var(--ink); color: #fff; padding: .6rem 1rem; border-radius: var(--radius-sm); }
+.skip-link:focus { top: 1rem; color: #fff; }
+
+/* 3. NAVBAR – light, slightly translucent, always readable */
+.site-nav {
+  padding: .75rem 0;
+  background: rgba(251, 248, 243, .94);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow .3s, border-color .3s;
+}
+.site-nav.scrolled { box-shadow: var(--shadow); border-bottom-color: var(--line); }
+.navbar-brand { font-size: 1.5rem; color: var(--ink) !important; }
+.navbar-brand i { color: var(--gold); }
+.site-nav .nav-link { color: var(--ink); font-weight: 600; padding: .5rem .85rem; border-radius: 8px; }
+.site-nav .nav-link:hover { background: var(--sage-soft); }
+.site-nav .nav-link.active { color: var(--sage-dk); background: var(--sage-soft); }
+.navbar-toggler { border-color: var(--line); }
+@media (max-width: 991.98px) {
+  .navbar-collapse { padding: .75rem 0 .5rem; margin-top: .5rem; border-top: 1px solid var(--line); }
+  .navbar-nav .btn { width: 100%; }
+}
+
+/* 4. HERO – solid soft-sage pastel (no image). Change --hero-bg to re-colour it. */
+.hero {
+  min-height: min(82vh, 720px);
+  padding: 7.5rem 0 4.5rem;
+  background: var(--hero-bg);
+  border-bottom: 1px solid var(--line);
+}
+.hero .lead { font-size: 1.25rem; max-width: 34rem; color: var(--text); }
+.hero-stats li { color: var(--text); }
+.hero-stats strong { display: block; font-family: "Fraunces", serif; font-size: 1.6rem; color: var(--sage-dk); line-height: 1.2; }
+@media (max-width: 767.98px) {
+  .hero { padding: 6.5rem 0 3.5rem; min-height: 0; }
+  .hero-stats { gap: 1.5rem !important; }
+}
+
+/* 5. SECTIONS & BUTTONS – identical rhythm and button styling everywhere */
+.section { padding: var(--section-y) 0; background: var(--bg); }
+.section-sand { background: var(--sand); }
+.section-head { text-align: center; max-width: 40rem; margin: 0 auto 2.5rem; }
+.section-head p, .lead-sm { color: var(--muted); font-size: 1.1rem; }
+.subhead { margin-bottom: 1.25rem; padding-left: .75rem; border-left: 3px solid var(--gold); }
+@media (max-width: 767.98px) { :root { --section-y: 3.75rem; } }
+
+.btn { font-weight: 600; border-radius: var(--radius-sm); padding: .6rem 1.25rem; transition: transform .2s, box-shadow .2s, background-color .2s, color .2s; }
+.btn-lg { padding: .8rem 1.75rem; }
+.btn-accent { background: var(--sage); border: 2px solid var(--sage); color: #fff; }
+.btn-accent:hover, .btn-accent:focus-visible { background: var(--sage-dk); border-color: var(--sage-dk); color: #fff; transform: translateY(-2px); box-shadow: 0 6px 14px rgba(56,92,77,.25); }
+.btn-outline-sage { background: rgba(255,255,255,.55); border: 2px solid var(--sage); color: var(--sage-dk); }
+.btn-outline-sage:hover, .btn-outline-sage:focus-visible { background: var(--sage-soft); color: var(--ink); transform: translateY(-2px); }
+
+.dest-tabs .nav-link { color: var(--ink); font-weight: 600; background: #fff; border: 1.5px solid var(--line); margin: 0 .3rem; padding: .55rem 1.4rem; border-radius: 50px; }
+.dest-tabs .nav-link:hover { border-color: var(--sage); }
+.dest-tabs .nav-link.active { background: var(--sage); border-color: var(--sage); color: #fff; }
+.btn-filter { background: #fff; border: 1.5px solid var(--line); color: var(--ink); border-radius: 50px; padding: .4rem 1.2rem; }
+.btn-filter:hover { border-color: var(--sage); }
+.btn-filter.active { background: var(--sage); border-color: var(--sage); color: #fff; }
+
+/* 6. CARDS & MEDIA */
+.card { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.card-body { padding: 1.25rem; }
+.card-text { color: var(--muted); }
+.dest-card, .pkg-card, .hotel-card { transition: transform .3s ease, box-shadow .3s ease; }
+.dest-card:hover, .pkg-card:hover, .hotel-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+/* Image box: fixed aspect ratio = no layout shift. The gradient + icon sit behind the photo
+   and become visible only if the image fails to load (script.js adds .is-broken). */
+.media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.media-short { aspect-ratio: 16 / 9; }
+.media-icon { font-size: 2.6rem; color: rgba(63, 68, 64, .38); }
+.media-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.media-img.is-broken { display: none; }
+.card:hover .media-img { transform: scale(1.05); }
+.ph-sand { background: linear-gradient(135deg, #EADBC0, #F5EBD9); }
+.ph-sage { background: linear-gradient(135deg, #CBDACF, #E6EEE8); }
+.ph-mist { background: linear-gradient(135deg, #CFDDE3, #E8F0F3); }
+.ph-rose { background: linear-gradient(135deg, #EBD6CC, #F6E9E2); }
+
+.link-cta { font-weight: 600; text-decoration: none; }
+.link-cta::after { content: "\2192"; display: inline-block; margin-left: .35rem; transition: transform .2s; }
+.dest-card:hover .link-cta::after { transform: translateX(4px); }
+.badge-type { align-self: flex-start; background: var(--sage-soft); color: var(--sage-dk); font-weight: 600; font-size: .85rem; padding: .4rem .7rem; border-radius: 50px; }
+.price { font-family: "Fraunces", serif; font-size: 1.35rem; font-weight: 600; color: var(--sage-dk); }
+.price span { font-family: "Source Sans 3", sans-serif; font-size: .9rem; font-weight: 400; color: var(--muted); }
+.rating i { color: var(--gold-text); }
+
+.activity { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; transition: border-color .25s, transform .25s; }
+.activity:hover { border-color: var(--sage); transform: translateY(-3px); }
+.activity i { font-size: 1.7rem; color: var(--sage); margin-bottom: .6rem; display: block; }
+.activity p { color: var(--muted); margin: 0; font-size: .98rem; }
+
+/* 7. VIDEO – responsive 16:9, scales on every screen */
+.video-wrap { position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: var(--sage-soft); box-shadow: var(--shadow-lg); }
+.video-wrap video { display: block; width: 100%; height: 100%; object-fit: cover; background: #000; }
+.credit { font-size: .88rem; color: var(--muted); margin: 0; }
+
+/* 8. FORMS */
+.form-card { background: #fff; padding: 2rem; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+@media (max-width: 575.98px) { .form-card { padding: 1.25rem; } }
+.form-label { font-weight: 600; color: var(--ink); }
+.form-control, .form-select { padding: .65rem .85rem; border: 1.5px solid #B9B3A6; border-radius: var(--radius-sm); background-color: #fff; }
+.form-control:focus, .form-select:focus { border-color: var(--sage); box-shadow: 0 0 0 .2rem rgba(70,112,95,.22); }
+.text-muted { color: var(--muted) !important; }
+.contact-list li { padding: .45rem 0; }
+.contact-list i { width: 1.8rem; color: var(--sage); }
+.modal-content { border: 0; border-radius: var(--radius); background: var(--bg); }
+.modal-header, .modal-footer { border-color: var(--line); }
+.modal-title { font-size: 1.3rem; }
+
+/* 9. FOOTER */
+.site-footer { background: #EFE6D6; color: var(--text); padding: 3.5rem 0 1.5rem; border-top: 1px solid var(--line); }
+.footer-brand { font-size: 1.5rem; margin-bottom: .5rem; }
+.footer-brand i { color: var(--gold); }
+.footer-title { font-family: "Source Sans 3", sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: .75rem; }
+.site-footer a { color: var(--sage-dk); text-decoration: none; }
+.site-footer a:hover { color: var(--ink); text-decoration: underline; }
+.social a { font-size: 1.5rem; margin-right: 1rem; }
+.copy { border-top: 1px solid var(--line); margin: 2rem 0 0; padding-top: 1.2rem; font-size: .92rem; color: var(--muted); }
+
+.to-top { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 1000; width: 46px; height: 46px; border: 0; border-radius: 50%; background: var(--sage); color: #fff; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s, transform .2s, background-color .2s; }
+.to-top.show { opacity: 1; visibility: visible; }
+.to-top:hover { background: var(--sage-dk); transform: translateY(-3px); }
+
+/* 10. MOTION – one entrance (hero text), hover feedback, brief fade when the package filter changes */
+.hero-content { animation: rise .8s ease both; }
+.pkg-enter { animation: rise .45s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

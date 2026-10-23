@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<!--
+  WAYFARE – Travel & Tourism Portal (v2)
+  Stack: HTML5 + Bootstrap 5 (grid, navbar, modal, tabs) + CSS3 + jQuery
+  Files: index.html · style.css · script.js   (open index.html; internet needed for CDN + photos)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wayfare – Domestic &amp; International Travel Packages</title>
+  <meta name="description" content="Plan domestic and international trips with Wayfare: curated packages, hotels and activities.">
+  <meta name="theme-color" content="#FBF8F3">
+
+  <!-- PERFORMANCE: connect early to the hosts we load from; scripts are deferred (see bottom) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- NAVIGATION: sticky (fixed-top) Bootstrap navbar, collapses to a hamburger below 992px -->
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#home"><i class="fa-solid fa-compass me-2" aria-hidden="true"></i>Wayfare</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="#watch">Watch</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stay">Stay</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-accent" href="#enquiry">Plan my trip</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO: solid soft-sage pastel background (set by --hero-bg in style.css) -->
+  <section id="home" class="hero d-flex align-items-center" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 hero-content">
+          <h1 id="hero-title">Your next trip, planned in one place</h1>
+          <p class="lead">Choose from handpicked domestic getaways and international escapes, with hotels and activities already sorted.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#packages" class="btn btn-accent btn-lg">Explore packages</a>
+            <a href="#destinations" class="btn btn-outline-sage btn-lg">Browse destinations</a>
+          </div>
+          <ul class="hero-stats list-unstyled d-flex flex-wrap gap-4 mt-5 mb-0">
+            <li><strong>8</strong> destinations</li>
+            <li><strong>6</strong> ready packages</li>
+            <li><strong>24/7</strong> trip support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section id="destinations" class="section" aria-labelledby="dest-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="dest-title">Where do you want to go?</h2>
+        <p>Start with a region, then pick a place that suits your pace.</p>
+      </div>
+
+      <ul class="nav nav-pills dest-tabs justify-content-center mb-4" id="destTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="dom-tab" data-bs-toggle="pill" data-bs-target="#dom"
+                  type="button" role="tab" aria-controls="dom" aria-selected="true">
+            <i class="fa-solid fa-map-location-dot me-2" aria-hidden="true"></i>Domestic
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="intl-tab" data-bs-toggle="pill" data-bs-target="#intl"
+                  type="button" role="tab" aria-controls="intl" aria-selected="false">
+            <i class="fa-solid fa-earth-asia me-2" aria-hidden="true"></i>International
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="dom" role="tabpanel" aria-labelledby="dom-tab" tabindex="0">
+          <div class="row g-4">
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="card dest-card h-100">
+                <div class="media ph-sand"><i class="fa-solid fa-landmark media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 25vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="Hawa Mahal, the pink palace in Jaipur" loading="lazy" decoding="async" style="object-position:center"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Jaipur, Rajasthan</h3>
+                  <p class="card-text">Forts, palaces and bazaars in the Pink City.</p>
+                  <a href="#packages" class="stretched-link link-cta" data-filter-jump="domestic">See packages</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="card dest-card h-100">
+                <div class="media ph-sage"><i class="fa-solid fa-sailboat media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 25vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="A traditional houseboat on the Alleppey backwaters" loading="lazy" decoding="async" style="object-position:center"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Alleppey, Kerala</h3>
+                  <p class="card-text">Houseboats, backwaters and slow mornings.</p>
+                  <a href="#packages" class="stretched-link link-cta" data-filter-jump="domestic">See packages</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="card dest-card h-100">
+                <div class="media ph-mist"><i class="fa-solid fa-mountain media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1586973996338-48eb2fe1066e?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1586973996338-48eb2fe1066e?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1586973996338-48eb2fe1066e?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 25vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="Pangong Lake with mountains in Ladakh" loading="lazy" decoding="async" style="object-position:center"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Leh–Ladakh</h3>
+                  <p class="card-text">High passes, monasteries and clear night skies.</p>
+                  <a href="#packages" class="stretched-link link-cta" data-filter-jump="domestic">See packages</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="card dest-card h-100">
+                <div class="media ph-rose"><i class="fa-solid fa-umbrella-beach media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1560179406-1c6c60e0dc76?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1560179406-1c6c60e0dc76?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1560179406-1c6c60e0dc76?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 25vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="Rows of beach umbrellas at Baga Beach, Goa" loading="lazy" decoding="async" style="object-position:center"></div>
+                <div class="card-body">
+                  <h3 class="card-title">North Goa</h3>
+                  <p class="card-text">Beaches, cafes and old Portuguese lanes.</p>
+                  <a href="#packages" class="stretched-link link-cta" data-filter-jump="domestic">See packages</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="intl" role="tabpanel" aria-labelledby="intl-tab" tabindex="0">
+          <div class="row g-4">
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="card dest-card h-100">
+                <div class="media ph-mist"><i class="fa-solid fa-city media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1553337546-017c3075360c?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1553337546-017c3075360c?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1553337546-017c3075360c?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 25vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="The Dubai skyline at sunset" loading="lazy" decoding="async" style="object-position:center"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Dubai, UAE</h3>
+                  <p class="card-text">Skyline views, desert safaris and shopping.</p>
+                  <a href="#packages" class="stretched-link link-cta" data-filter-jump="international">See packages</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="card dest-card h-100">
+                <div class="media ph-sand"><i class="fa-solid fa-tower-observation media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1565733745662-3d45b0bd6ac0?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1565733745662-3d45b0bd6ac0?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1565733745662-3d45b0bd6ac0?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 25vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="The Eiffel Tower in Paris" loading="lazy" decoding="async" style="object-position:center"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Paris, France</h3>
+                  <p class="card-text">Museums, riverside walks and long dinners.</p>
+                  <a href="#packages" class="stretched-link link-cta" data-filter-jump="international">See packages</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="card dest-card h-100">
+                <div class="media ph-sage"><i class="fa-solid fa-leaf media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1557093793-e196ae071479?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1557093793-e196ae071479?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1557093793-e196ae071479?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 25vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="Tegalalang rice terraces near Ubud, Bali" loading="lazy" decoding="async" style="object-position:center"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Bali, Indonesia</h3>
+                  <p class="card-text">Rice terraces, temples and surf beaches.</p>
+                  <a href="#packages" class="stretched-link link-cta" data-filter-jump="international">See packages</a>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <article class="card dest-card h-100">
+                <div class="media ph-rose"><i class="fa-solid fa-water media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.pexels.com/photos/1450350/pexels-photo-1450350.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=480&h=300" srcset="https://images.pexels.com/photos/1450350/pexels-photo-1450350.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=480&h=300 480w, https://images.pexels.com/photos/1450350/pexels-photo-1450350.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=500 800w" sizes="(min-width: 992px) 25vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="Overwater villas on a Maldives lagoon" loading="lazy" decoding="async" style="object-position:center"></div>
+                <div class="card-body">
+                  <h3 class="card-title">Maldives</h3>
+                  <p class="card-text">Overwater villas and calm turquoise lagoons.</p>
+                  <a href="#packages" class="stretched-link link-cta" data-filter-jump="international">See packages</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="section section-sand" aria-labelledby="pkg-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="pkg-title">Travel packages</h2>
+        <p>Prices are per person, based on twin sharing, and include stay and transfers.</p>
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" role="group" aria-label="Filter packages">
+        <button type="button" class="btn btn-filter active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="btn btn-filter" data-filter="domestic" aria-pressed="false">Domestic</button>
+        <button type="button" class="btn btn-filter" data-filter="international" aria-pressed="false">International</button>
+      </div>
+      <p id="pkgCount" class="visually-hidden" role="status" aria-live="polite"></p>
+
+      <div class="row g-4" id="packageGrid">
+        <div class="col-12 col-md-6 col-lg-4 pkg-item" data-type="domestic">
+          <article class="card pkg-card h-100">
+            <div class="media ph-sand"><i class="fa-solid fa-landmark media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="Hawa Mahal in Jaipur" loading="lazy" decoding="async" style="object-position:center"></div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge badge-type">Domestic · 4 nights</span>
+              <h3 class="card-title mt-2">Royal Rajasthan Circuit</h3>
+              <p class="card-text">Jaipur, Jodhpur and Udaipur with heritage hotel stays and a guided city tour in each.</p>
+              <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <p class="price mb-0"><span>From</span> ₹24,999</p>
+                <button type="button" class="btn btn-accent btn-book" data-bs-toggle="modal" data-bs-target="#bookingModal" data-package="Royal Rajasthan Circuit">Book now</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pkg-item" data-type="domestic">
+          <article class="card pkg-card h-100">
+            <div class="media ph-sage"><i class="fa-solid fa-sailboat media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1593693411515-c20261bcad6e?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="A houseboat on the Kerala backwaters" loading="lazy" decoding="async" style="object-position:center"></div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge badge-type">Domestic · 5 nights</span>
+              <h3 class="card-title mt-2">Kerala Backwaters Escape</h3>
+              <p class="card-text">Munnar tea hills, a night on a houseboat in Alleppey and an Ayurvedic spa session.</p>
+              <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <p class="price mb-0"><span>From</span> ₹29,500</p>
+                <button type="button" class="btn btn-accent btn-book" data-bs-toggle="modal" data-bs-target="#bookingModal" data-package="Kerala Backwaters Escape">Book now</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pkg-item" data-type="domestic">
+          <article class="card pkg-card h-100">
+            <div class="media ph-mist"><i class="fa-solid fa-mountain media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1586973996338-48eb2fe1066e?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1586973996338-48eb2fe1066e?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1586973996338-48eb2fe1066e?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="Pangong Lake in Ladakh" loading="lazy" decoding="async" style="object-position:center"></div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge badge-type">Domestic · 6 nights</span>
+              <h3 class="card-title mt-2">Ladakh Adventure</h3>
+              <p class="card-text">Pangong Lake, Nubra Valley and monastery visits, with acclimatisation days built in.</p>
+              <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <p class="price mb-0"><span>From</span> ₹34,800</p>
+                <button type="button" class="btn btn-accent btn-book" data-bs-toggle="modal" data-bs-target="#bookingModal" data-package="Ladakh Adventure">Book now</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pkg-item" data-type="international">
+          <article class="card pkg-card h-100">
+            <div class="media ph-mist"><i class="fa-solid fa-city media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1553337546-017c3075360c?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1553337546-017c3075360c?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1553337546-017c3075360c?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="Dubai skyline at sunset" loading="lazy" decoding="async" style="object-position:center"></div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge badge-type">International · 4 nights</span>
+              <h3 class="card-title mt-2">Dubai City &amp; Desert</h3>
+              <p class="card-text">City tour, Burj Khalifa entry, an evening desert safari and a dhow cruise dinner.</p>
+              <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <p class="price mb-0"><span>From</span> ₹58,400</p>
+                <button type="button" class="btn btn-accent btn-book" data-bs-toggle="modal" data-bs-target="#bookingModal" data-package="Dubai City &amp; Desert">Book now</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pkg-item" data-type="international">
+          <article class="card pkg-card h-100">
+            <div class="media ph-sand"><i class="fa-solid fa-tower-observation media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1565733745662-3d45b0bd6ac0?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1565733745662-3d45b0bd6ac0?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1565733745662-3d45b0bd6ac0?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="The Eiffel Tower in Paris" loading="lazy" decoding="async" style="object-position:center"></div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge badge-type">International · 5 nights</span>
+              <h3 class="card-title mt-2">Paris Classic Break</h3>
+              <p class="card-text">Eiffel Tower, a Seine cruise, the Louvre and a day trip to Versailles.</p>
+              <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <p class="price mb-0"><span>From</span> ₹96,500</p>
+                <button type="button" class="btn btn-accent btn-book" data-bs-toggle="modal" data-bs-target="#bookingModal" data-package="Paris Classic Break">Book now</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pkg-item" data-type="international">
+          <article class="card pkg-card h-100">
+            <div class="media ph-sage"><i class="fa-solid fa-leaf media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1557093793-e196ae071479?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1557093793-e196ae071479?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1557093793-e196ae071479?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw" width="800" height="500" alt="Bali rice terraces" loading="lazy" decoding="async" style="object-position:center"></div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge badge-type">International · 5 nights</span>
+              <h3 class="card-title mt-2">Bali Island Retreat</h3>
+              <p class="card-text">Ubud and Seminyak stays, a temple tour, a Kecak dance evening and a free beach day.</p>
+              <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <p class="price mb-0"><span>From</span> ₹52,999</p>
+                <button type="button" class="btn btn-accent btn-book" data-bs-toggle="modal" data-bs-target="#bookingModal" data-package="Bali Island Retreat">Book now</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTIMEDIA: dedicated video section (native HTML5 <video>, responsive 16:9) -->
+  <section id="watch" class="section" aria-labelledby="watch-title">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <h2 id="watch-title">See Rajasthan before you go</h2>
+          <p class="lead-sm">A short film from the Incredible India campaign: forts, desert towns and the colours of the markets. It's a good way to decide which stops matter most to you.</p>
+          <a href="#packages" class="btn btn-accent mt-2" data-filter-jump="domestic">View Rajasthan packages</a>
+        </div>
+        <div class="col-lg-7">
+          <figure class="video-wrap mb-2">
+            <!-- preload="none": the 16 MB file only downloads when the visitor presses play -->
+            <video controls preload="none" playsinline poster="https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=960&h=540&q=75" aria-describedby="video-caption">
+              <source src="https://commons.wikimedia.org/wiki/Special:FilePath/Rajasthan_-_You_haven%27t_seen_it_all.webm" type="video/webm">
+              Your browser can't play this video. <a href="https://commons.wikimedia.org/wiki/Special:FilePath/Rajasthan_-_You_haven%27t_seen_it_all.webm">Open it in a new tab</a>.
+            </video>
+          </figure>
+          <p id="video-caption" class="credit">Video: "Rajasthan – You haven't seen it all", Incredible India (Ministry of Tourism, Government of India), via Wikimedia Commons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOMMODATION & ACTIVITIES -->
+  <section id="stay" class="section section-sand" aria-labelledby="stay-title">
+    <div class="container">
+      <div class="section-head">
+        <h2 id="stay-title">Where you'll stay, what you'll do</h2>
+        <p>Hotels we use most often, and activities you can add to any package.</p>
+      </div>
+
+      <h3 class="subhead">Featured hotels</h3>
+      <div class="row g-4 mb-5">
+        <div class="col-12 col-md-4">
+          <article class="card hotel-card h-100">
+            <div class="media ph-sand media-short"><i class="fa-solid fa-hotel media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1524229648276-e66561fe45a9?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 768px) 33vw, 100vw" width="800" height="500" alt="Pink latticed facade of Hawa Mahal, Jaipur" loading="lazy" decoding="async" style="object-position:center 40%"></div>
+            <div class="card-body">
+              <h4 class="card-title">Haveli Heritage Inn, Jaipur</h4>
+              <p class="rating mb-1" role="img" aria-label="Rated 4 out of 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p>
+              <p class="card-text mb-2">Restored haveli with a rooftop restaurant.</p>
+              <p class="price mb-0">₹6,200 <span>per night</span></p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-4">
+          <article class="card hotel-card h-100">
+            <div class="media ph-sage media-short"><i class="fa-solid fa-sailboat media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 768px) 33vw, 100vw" width="800" height="500" alt="A wooden boat on the Alleppey backwaters" loading="lazy" decoding="async" style="object-position:center"></div>
+            <div class="card-body">
+              <h4 class="card-title">Backwater Villas, Alleppey</h4>
+              <p class="rating mb-1" role="img" aria-label="Rated 4 out of 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p>
+              <p class="card-text mb-2">Lakeside rooms with a private houseboat deck.</p>
+              <p class="price mb-0">₹7,100 <span>per night</span></p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-4">
+          <article class="card hotel-card h-100">
+            <div class="media ph-mist media-short"><i class="fa-solid fa-building media-icon" aria-hidden="true"></i><img class="media-img" src="https://images.unsplash.com/photo-1553337546-017c3075360c?auto=format&fit=crop&w=480&h=300&q=75" srcset="https://images.unsplash.com/photo-1553337546-017c3075360c?auto=format&fit=crop&w=480&h=300&q=75 480w, https://images.unsplash.com/photo-1553337546-017c3075360c?auto=format&fit=crop&w=800&h=500&q=75 800w" sizes="(min-width: 768px) 33vw, 100vw" width="800" height="500" alt="Dubai high-rise towers at sunset" loading="lazy" decoding="async" style="object-position:center 60%"></div>
+            <div class="card-body">
+              <h4 class="card-title">Marina Skyline Hotel, Dubai</h4>
+              <p class="rating mb-1" role="img" aria-label="Rated 5 out of 5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+              <p class="card-text mb-2">High-floor rooms close to the marina walk.</p>
+              <p class="price mb-0">₹11,800 <span>per night</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <h3 class="subhead">Add an activity</h3>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="activity h-100">
+            <i class="fa-solid fa-person-hiking" aria-hidden="true"></i>
+            <h4>Guided treks</h4>
+            <p>Half-day and full-day routes with a local guide.</p>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="activity h-100">
+            <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+            <h4>Food walks</h4>
+            <p>Street food and regional dishes, with a host who knows the stalls.</p>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="activity h-100">
+            <i class="fa-solid fa-person-snorkeling" aria-hidden="true"></i>
+            <h4>Water sports</h4>
+            <p>Snorkelling, kayaking and parasailing at select beaches.</p>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="activity h-100">
+            <i class="fa-solid fa-camera" aria-hidden="true"></i>
+            <h4>Photo tours</h4>
+            <p>Sunrise and golden-hour spots, with tips from a local photographer.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY -->
+  <section id="enquiry" class="section" aria-labelledby="enq-title">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-5">
+          <h2 id="enq-title">Tell us about your trip</h2>
+          <p class="lead-sm">Share a few details and a travel advisor will reply within one working day with options and a quote.</p>
+          <ul class="list-unstyled contact-list">
+            <li><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 98765 43210</li>
+            <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> hello@wayfare.example</li>
+            <li><i class="fa-solid fa-clock" aria-hidden="true"></i> Mon–Sat, 9 am to 7 pm</li>
+          </ul>
+        </div>
+        <div class="col-lg-7">
+          <form id="enquiryForm" class="form-card" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="eName" class="form-label">Full name</label>
+                <input type="text" class="form-control" id="eName" name="name" autocomplete="name" required>
+                <div class="invalid-feedback">Enter your full name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="eEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="eEmail" name="email" autocomplete="email" required>
+                <div class="invalid-feedback">Enter a valid email address.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="ePhone" class="form-label">Mobile number</label>
+                <input type="tel" class="form-control" id="ePhone" name="phone" autocomplete="tel" inputmode="tel" required>
+                <div class="invalid-feedback">Enter a valid 10-digit mobile number.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="eType" class="form-label">Trip type</label>
+                <select class="form-select" id="eType" name="type" required>
+                  <option value="">Choose one</option>
+                  <option>Domestic</option>
+                  <option>International</option>
+                </select>
+                <div class="invalid-feedback">Choose a trip type.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="eDate" class="form-label">Travel date</label>
+                <input type="date" class="form-control" id="eDate" name="date" required>
+                <div class="invalid-feedback">Pick a date that is today or later.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="eTravellers" class="form-label">Travellers</label>
+                <input type="number" class="form-control" id="eTravellers" name="travellers" min="1" max="20" value="2" required>
+                <div class="invalid-feedback">Enter between 1 and 20 travellers.</div>
+              </div>
+              <div class="col-12">
+                <label for="eMsg" class="form-label">Anything we should know? <span class="text-muted">(optional)</span></label>
+                <textarea class="form-control" id="eMsg" name="message" rows="3"></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-accent btn-lg w-100">Send enquiry</button>
+              </div>
+            </div>
+            <div id="enquirySuccess" class="alert alert-success mt-3 mb-0 d-none" role="status">
+              <i class="fa-solid fa-circle-check me-2" aria-hidden="true"></i>Thanks! Your enquiry is in. We'll reply within one working day.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-5">
+        <p class="footer-brand"><i class="fa-solid fa-compass me-2" aria-hidden="true"></i>Wayfare</p>
+        <p class="mb-0">Domestic and international trips, planned with local knowledge.</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h2 class="footer-title">Explore</h2>
+        <ul class="list-unstyled mb-0">
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#stay">Stay &amp; activities</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4">
+        <h2 class="footer-title">Follow us</h2>
+        <p class="social mb-0">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </p>
+      </div>
+    </div>
+    <p class="copy">© 2026 Wayfare. Photos via Unsplash and Pexels; video via Wikimedia Commons.</p>
+  </div>
+</footer>
+
+<button type="button" id="toTop" class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+
+<!-- BOOKING MODAL (Bootstrap) -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="bookingModalLabel">Book: <span id="modalPackage">your package</span></h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="bookingForm" novalidate>
+        <div class="modal-body">
+          <input type="hidden" id="bPackage" name="package">
+          <div class="mb-3">
+            <label for="bName" class="form-label">Full name</label>
+            <input type="text" class="form-control" id="bName" autocomplete="name" required>
+            <div class="invalid-feedback">Enter your full name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="bEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="bEmail" autocomplete="email" required>
+            <div class="invalid-feedback">Enter a valid email address.</div>
+          </div>
+          <div class="row g-3">
+            <div class="col-12 col-sm-7">
+              <label for="bDate" class="form-label">Travel date</label>
+              <input type="date" class="form-control" id="bDate" required>
+              <div class="invalid-feedback">Pick a date that is today or later.</div>
+            </div>
+            <div class="col-12 col-sm-5">
+              <label for="bTravellers" class="form-label">Travellers</label>
+              <input type="number" class="form-control" id="bTravellers" min="1" max="20" value="2" required>
+              <div class="invalid-feedback">Enter 1 to 20.</div>
+            </div>
+          </div>
+          <div id="bookingSuccess" class="alert alert-success mt-3 mb-0 d-none" role="status">
+            Request received. We'll email you the next steps shortly.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-sage" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-accent">Request booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- PERFORMANCE: defer keeps rendering fast; order is preserved (jQuery, Bootstrap, then our script) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>
