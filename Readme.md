@@ -2,7 +2,7 @@
 
 Wayfare is a front-end travel and tourism landing website concept for browsing domestic and international trips. It presents curated destinations, package deals, hotel suggestions, activities, and enquiry/booking flows in a polished, responsive single-page experience.
 
-The project is built using plain HTML, CSS, and JavaScript, with Bootstrap for layout and UI components, and runs as a static website with no backend or database.
+The project is built using plain HTML, CSS, and JavaScript, with Bootstrap for layout and UI components, and runs as a front-end website with no backend or database.
 
 ## Overview
 
@@ -14,7 +14,7 @@ Wayfare helps users:
 - Submit demo enquiry and booking requests with client-side validation
 - Navigate through a smooth, accessible single-page layout
 
-This is a concept website designed for UI/UX demonstration and front-end prototyping rather than production booking functionality.
+This is a concept website designed for UI/UX demonstration and front-end prototyping, focused on showcasing frontend skills and a polished travel brand experience.
 
 ## Features
 
@@ -28,7 +28,7 @@ This is a concept website designed for UI/UX demonstration and front-end prototy
 - Reduced-motion support for users who prefer minimal animation
 - Accessible labels, focus states, and status updates for assistive technologies
 - Video section highlighting Rajasthan-inspired travel content
-- Lightweight static setup with no build pipeline required
+- Lightweight front-end setup with no build pipeline required
 
 ## Tech Stack
 
@@ -59,23 +59,15 @@ GenAI-Project/
 - `script.js` – navigation behavior, package filtering, modal logic, and client-side form validation
 - `Readme.md` – project overview and usage instructions
 
-## Run Locally
+## Deployment
 
-No install step or package manager is required.
-
-1. Clone or download this repository.
-2. Open `index.html` directly in a browser, or serve the folder with a local web server.
-3. Example using Python:
-
-```bash
-python -m http.server 8000
-```
-
-Then visit:
+This project is deployed on GitHub Pages at:
 
 ```text
-http://localhost:8000
+https://shlok2207.github.io/GenAI-Project/
 ```
+
+No install step or build process is required for the live deployment.
 
 Note: an internet connection is required because the project uses CDN-hosted libraries, fonts, photos, and the video source.
 
@@ -97,10 +89,6 @@ The project includes several front-end accessibility considerations:
 - Reduced-motion detection for smoother interaction on motion-sensitive devices
 - Live status messaging for filter results and form submission feedback
 
-## License
-
-This project is provided for educational and portfolio-style demonstration purposes.
-
 ## Summary
 
-Wayfare is a static, front-end travel website concept focused on showcasing destination browsing, package selection, and polished user interaction in a tourism brand style. It demonstrates how a travel brand can present trip options, assist planning, and deliver a responsive marketing experience without requiring a backend.
+Wayfare is a front-end travel website concept focused on showcasing destination browsing, package selection, and polished user interaction in a tourism brand style. It demonstrates how a travel brand can present trip options, assist planning, and deliver a responsive marketing experience without requiring a backend.
