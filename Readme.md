@@ -1,6 +1,8 @@
 # Wayfare
 
-Visit the live site here: [Wayfare Live Website](https://shlok2207.github.io/GenAI-Project/)
+## Live Demo
+
+[🚀 Visit the live website](https://shlok2207.github.io/GenAI-Project/)
 
 Wayfare is a front-end travel and tourism landing website concept for browsing domestic and international trips. It presents curated destinations, package deals, hotel suggestions, activities, and enquiry options in a polished travel brand style.
 
@@ -25,7 +27,7 @@ This is a concept website designed for UI/UX demonstration and front-end prototy
 - Booking modal that displays the selected package name
 - Enquiry form and booking form with inline validation
 - Responsive layout optimized for mobile, tablet, and desktop screens
-- Sticky navigation, smooth scroll, active section highlighting, and back-to-top button
+- Sticky navigation, smooth scroll, active section highlighting, and back-to-back button
 - Keyboard-friendly interactions and skip-to-content support
 - Reduced-motion support for users who prefer minimal animation
 - Accessible labels, focus states, and status updates for assistive technologies
